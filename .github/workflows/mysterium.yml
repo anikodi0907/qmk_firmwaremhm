@@ -1,26 +1,24 @@
-name: Build Mysterium hex file
-
-on:
-  push:
-    branches:
-    - master
-
-jobs:
-  qmk_build:
-    runs-on: ubuntu-latest
-    container: qmkfm/qmk_cli
-    steps:
-    - uses: actions/checkout@v2
-    - name: QMK setup
-      run: qmk setup -y
-    - name: Build mysterium
-      run: qmk compile -kb crkbd split -km via
-    - name: Upload the generated hex file
-      uses: actions/upload-artifact@v2
-      with:
-        name: hex_file
-        path: crkbd.hex
-    - name: Download math result for job 2
-      uses: actions/download-artifact@v2
-      with:
-        name: hex_file
+name: Build Mysterium hex file 
+  
+ on: 
+   workflow_dispatch: 
+    
+ jobs: 
+   qmk_build: 
+     runs-on: ubuntu-latest 
+     container: qmkfm/qmk_cli 
+     steps: 
+     - uses: actions/checkout@v2 
+     - name: QMK setup 
+       run: qmk setup -y 
+     - name: Build mysterium 
+       run: qmk compile -kb "crkbd split" -km via 
+     - name: Upload the generated hex file 
+       uses: actions/upload-artifact@v2 
+       with: 
+         name: hex_file 
+         path: crkbd_split.hex 
+     - name: Download math result for job 2 
+       uses: actions/download-artifact@v2 
+       with: 
+         name: hex_file
