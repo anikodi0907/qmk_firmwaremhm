@@ -12,12 +12,12 @@ jobs:
     - name: QMK setup 
       run: qmk setup -y 
     - name: Build mysterium 
-      run: qmk compile -kb "crkbd split/crkbd" -km via 
+      run: qmk compile -kb "anikodi/crkbd" -km via 
     - name: Upload the generated hex file 
       uses: actions/upload-artifact@v2 
       with: 
         name: hex_file 
-        path: crkbd_split_crkbd.hex 
+        path: anikodi_crkbd.hex 
     - name: Download math result for job 2 
       uses: actions/download-artifact@v2 
       with: 
