@@ -17,7 +17,7 @@ jobs:
       uses: actions/upload-artifact@v2 
       with: 
         name: hex_file 
-        path: anikodi_crkbd.hex 
+        path: crkbd_rev1_via.hex
     - name: Download math result for job 2 
       uses: actions/download-artifact@v2 
       with: 
