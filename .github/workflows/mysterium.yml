@@ -2,7 +2,7 @@ name: Build Mysterium hex file
   
 on: 
   workflow_dispatch: 
-
+  
 jobs: 
   qmk_build: 
     runs-on: ubuntu-latest 
